@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TechWaste</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		/>
+		<style>
+			/* Basic CSS for layout */
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background-image: url("bg.jpg1");
+				background-color: white;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				color: #fff;
+			}
+			header {
+				background-color: #005100;
+				color: #fff;
+				padding: 10px 0;
+				text-align: center;
+			}
+
+			/* Style the navigation links */			
+			nav {
+				background-color: #1E453E;
+				padding: 10px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				
+				position: fixed;
+				top: 0;
+            left: 0;
+			width: 100%;
+
+
+				z-index: 1000; 
+			}
+			.logo-container {
+				display: flex;
+				align-items: center;
+			}
+			.logo {
+				height: 50px;
+				margin-right: 10px;
+			}
+			.company-name {
+				font-size: 1.5em;
+			}
+
+			.contact-info {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+			}
+			.contact-info span {
+				margin-right: 20px;
+				align-items: center;
+			}
+			.contact-info i {
+				margin-right: 5px;
+			}
+			nav a {
+				color: #fff;
+				text-decoration: none;
+				margin-right: 20px;
+				padding: 10px;
+			}
+			.dropdown {
+				float: left;
+				overflow: hidden;
+			}
+
+			/* Style the dropdown button */
+			.dropdown .dropbtn {
+				font-size: 16px;
+				border: none;
+				outline: none;
+				color: white;
+				padding: 14px 16px;
+				background-color: inherit;
+				font-family: inherit;
+				margin: 0;
+			}
+
+			/* Style the dropdown content (hidden by default) */
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+				z-index: 1;
+			}
+
+			/* Style the links inside the dropdown */
+			.dropdown-content a {
+				float: none;
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+			}
+
+			/* Add a grey background color to dropdown links on hover */
+			.dropdown-content a:hover {
+				background-color: #ddd;
+			}
+
+			/* Show the dropdown menu on hover */
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+			.container {
+				max-width: 900px;
+				margin: 20px auto;
+				padding: 0 20px;
+			}
+			.buy-now-button {
+				background-color: #1E453E;
+				background-size: cover;
+				color: white;
+				padding: 15px 30px;
+				font-size: 20px;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: transform 0.2s ease;
+			}
+
+			.buy-now-button:hover {
+				transform: translateY(-2px);
+			}
+			h2 {
+				color: black;
+			}
+			.row {
+				display: flex;
+				justify-content: center;
+			}
+			.collaboration-rectangle {
+				width: 200px;
+				height: 150px;
+				border: 1px solid #ccc;
+				margin: 10px;
+				display: inline-block;
+				vertical-align: top;
+				background-color: #f0f0f0;
+				text-align: center;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			.button_colab {
+				background-color:#1E453E;
+				color: white;
+				padding: 10px 20px;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: transform 0.2s ease;
+			}
+
+			.button_colab:hover {
+				transform: translateY(-2px);
+			}
+			.rating {
+				unicode-bidi: bidi-override;
+				direction: rtl;
+				text-align: left;
+			}
+			.rating span {
+				font-size: 30px;/* Gold color */
+				display: inline-block;
+				position: relative;
+				width: 1.1em;
+			}
+
+			.rating span:before {
+				content: "\2605";
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+			}
+
+			.rating span:hover:before,
+			.rating span:hover ~ span:before {
+				opacity: 1;
+			
+			}
+			footer {
+				background-color: #1E453E;
+				color: #fff;
+				padding: 20px 0;
+				text-align: center;
+			}
+			.social-icons {
+				display: flex;
+				justify-content: center;
+				margin-top: 10px;
+			}
+			.social-icons a {
+				color: #fff;
+				margin: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav id="navLink">
+			<div class="logo-container">
+				<!-- Your logo here -->
+				<img src="logo.png" alt="Logo" class="logo" />
+				<span class="company-name">TechWaste</span>
+			</div>
+			<div>				
+				<a href="#about">About</a>
+				<a href="#product">Product</a>
+				<a href="#collaboration">Collaboration</a>
+				<a href="#contact">Contact Us</a>
+			</div>
+			<div>
+				<a href="#warrenty">
+				<div class="dropdown">
+					<button class="dropbtn">
+						Warrenty
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="#payment_2Years.html" onclick="redirectToPayment2()">2 Years</a>
+						<a href="#payment_3Years.html" onclick="redirectToPayment3()"">3 Years</a>
+						<a href="#payment_5Years.html" onclick="redirectToPayment5()">5 Years</a>
+					</div></div></a>
+					<div class="dropdown">
+						<button class="dropbtn">Profile</button>
+						<div class="dropdown-content">
+							<a href="#signin" onclick="redirectToSign_in()">Sign In</a>
+							<a href="#signup" onclick="redirectToSign_up()">Sign Up</a>
+						</div>
+					</div>
+
+			</div>
+		</nav>
+		<img
+			src="bin_home.jpg"
+			alt="Smart Dustbin"
+			style="
+				width: 100%;
+				max-width: 800px;
+				display: block;
+				margin: 20px auto;
+			"
+		/>
+		<div class="container">
+			<section id="about">
+				<h2>About Us</h2>
+				<p style="color: black">
+					Welcome to TechWaste : Transforming waste management for
+					businesses with cutting-edge technology is our goal. Our
+					innovative technology optimizes efficiency, promotes
+					sustainability, and enhances hygiene, all while boosting our
+					brand's image. Our SmartBins track waste in real-time, reduce
+					costs, and improve environmental impact, showcasing your
+					commitment to sustainability and efficiency.
+
+					<b>"Join us in creating a cleaner world today".</b>
+				</p>
+			</section>
+			<section id="product">
+				<h2>Our TechWaste Dustbin</h2>
+				<div>
+					<p style="color: black">
+						The smart dustbin is equipped with sensors to detect when it's
+						full, and it can automatically compress trash to maximize
+						space.
+					</p>
+					<b style="color: black">Features</b>
+					<p style="color: black">
+						1. Our SmartBins feature sensor-based waste level monitoring
+					</p>
+					<p style="color: black">
+						2. Providing real-time alerts and notifications.
+					</p>
+					<p style="color: black">
+						3. Enjoy customization options including colors, logos, and
+						size, with the ability to accommodate multiple segregations.
+					</p>
+					<p style="color: black">
+						4. Equipped with GPS, automated lid opening, and optional
+						wheels and pedals for convenience.
+					</p>
+					<h3><p style="color: black">Price: $36.00</p></h3>
+					<!-- Add more details about the product as needed -->
+					<a href="#purchase">
+						<button class="buy-now-button" onclick="redirectToPayment()">
+							Buy Now
+						</button></a
+					>
+				</div>
+			</section>
+			<section id="collaboration">
+				<h2>For Collaboration</h2>
+				<div class="row">
+					<div
+						class="collaboration-rectangle"
+						style="
+							background-image: url(university.png);
+							background-size: cover;
+							background-position: center;
+						"
+						onclick="redirectToPurchase()"
+					>
+					<h2>       </h2>
+						<button class="button_colab">University</button>
+					</div>
+					<div class="collaboration-rectangle" 					
+					style="
+					background-image: url(industries.png);
+					background-size: cover;
+					background-position: center;
+					"
+					onclick="redirectToPurchase()">
+					<h2>       </h2>
+						<button class="button_colab">Industries</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="collaboration-rectangle" style="
+					background-image: url(med.png);
+					background-size: cover;
+					background-position: center;
+				"onclick="redirectToPurchase()">
+					<h2>       </h2>
+					<button class="button_colab">Hospitals</button>
+					</div>
+					<div class="collaboration-rectangle" style="
+					background-image: url(muncipal.png);
+					background-size: cover;
+					background-position: center;
+				"onclick="redirectToPurchase()">
+					<h2>       </h2>
+						<button class="button_colab">Municipality</button>
+					</div>
+					<div class="collaboration-rectangle" style="
+					background-image: url(others.png);
+					background-size: cover;
+					background-position: center;
+				"onclick="redirectToPurchase()">
+					<h2>       </h2>
+						<button class="button_colab">Others</button>
+					</div>
+				</div>
+			</section>
+			<section href="#contact" id="contact">
+				<h2>Customer feedback</h2>
+				<div class="rating">
+					<span style="color: black;">☆</span>
+					<span style="color: black;">☆</span>
+					<span style="color: black;">☆</span>
+					<span style="color: black;">☆</span>
+					<span style="color: black;">☆</span>
+				</div>
+				<p style="color: black"><form><input type="text" id="Review" name="feedback" required\><button class="button_colab" onclick="alert('Thankyou for feedback..')">Submit</button></form>
+		</p>
+		<h2>For Support</h2>
+		<p style="color: black;">Contact us : +91 9633699631</p>
+			</section>
+		</div>
+		<footer>
+			<p>Contact Us:</p>
+			<div class="social-icons">
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-instagram"></i></a>
+			</div>
+			<div class="contact-info" style="justify-content: center; padding-top: 20px;">
+				<span><i class="fas fa-phone"></i>+91 9633699631</span>
+				<span><i class="fas fa-envelope"></i>9921004312@klu.ac.in</span>
+				<span
+					><i class="fas fa-map-marker-alt"></i>Krishnankoil, Kare</span
+				>
+			</div>
+
+			<p>&copy; 2024 TechWaste Dustbin Website.</p>
+		</footer>
+		<script>
+			function redirectToPayment() {
+				window.location.href = "payment_page.html";
+			}
+			function redirectToPayment2() {
+				window.location.href = "payment_2Years.html";
+			}	function redirectToPayment3() {
+				window.location.href = "payment_3Years.html";
+			}	function redirectToPayment5() {
+				window.location.href = "payment_5Years.html";
+			}
+			function redirectToPurchase() {
+				window.location.href = "colab.html";
+			}
+			function redirectToSign_in() {
+				window.location.href = "sign_in.html";
+			}
+			function redirectToSign_up() {
+				window.location.href = "sign_up.html";
+			}
+		</script>
+	</body>
+</html>
+	

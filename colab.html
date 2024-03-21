@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TechWaste</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		/>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				color: #ffffff;
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				width: 50%;
+				margin: 50px auto;
+				background-color: #1e453e;
+				padding: 20px;
+				border-radius: 10px;
+			}
+
+			input[type="text"],
+			input[type="submit"] {
+				width: 100%;
+				padding: 12px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+
+			input[type="submit"] {
+				background-color: #4caf50;
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+
+			input[type="submit"]:hover {
+				background-color: #45a049;
+			}
+
+			h1 {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Purchase</h1>
+			<form action="process_payment.php" method="post">
+				<label for="card_number">Name</label>
+				<input
+					type="text"
+					id="card_number"
+					name="card_number"
+					placeholder="Full name"
+					required
+				/><br /><br />
+
+				<label for="expiry_date">Company name/Residency:</label>
+				<input
+					type="text"
+					id="expiry_date"
+					name="expiry_date"
+					required
+				/><br /><br />
+
+				<label for="cvv">Mobile Number</label>
+				<input
+					type="text"
+					id="cvv"
+					name="cvv"
+					placeholder="+91"
+					required
+				/><br /><br />
+
+				<label for="cvv">Mail</label>
+				<input
+					type="text"
+					id="cvv"
+					name="cvv"
+					placeholder="example@gmail.com"
+					required
+				/><br /><br />
+				<label for="name">Customization</label>
+				<input
+					type="text"
+					id="name"
+					name="name"
+					placeholder="Mention if any required(size,color..)"
+				/><br /><br />
+				<label for="name">Quantity</label>
+				<input type="text" id="name" name="name" required /><br /><br />
+
+				<label for="amount">Total Amount:</label>
+				<input type="text" id="amount" name="amount" required /><br /><br />
+				<input
+					type="submit"
+					value="Proceed"
+					onclick="redirectTopayment_colab()"
+				/>
+			</form>
+		</div>
+		<script>
+			function redirectTopayment_colab() {
+				window.location.href = "payment_colab.html";
+			}
+		</script>
+	</body>
+</html>

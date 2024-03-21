@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Payment Page</title>
+		<style>
+			body {
+				background-size: cover;
+				font-family: Arial, sans-serif;
+				color: #ffffff;
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				width: 50%;
+				margin: 50px auto;
+				background-color: #1e453e;
+				padding: 20px;
+				border-radius: 10px;
+			}
+
+			input[type="text"],
+			input[type="submit"] {
+				width: 100%;
+				padding: 12px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+
+			input[type="submit"] {
+				background-color: #4caf50;
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+
+			input[type="submit"]:hover {
+				background-color: #45a049;
+			}
+
+			h1 {
+				text-align: center;
+			}
+
+			.card-image {
+				display: block;
+				margin: 0 auto;
+				width: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Payment Details</h1>
+			<img class="card-image" src="credit.jpg" alt="Credit Card" />
+			<form action="process_payment.php" method="post">
+				<label for="card_number">Card Number:</label>
+				<input
+					type="text"
+					id="card_number"
+					name="card_number"
+					required
+				/><br /><br />
+
+				<label for="expiry_date">Expiry Date:</label>
+				<input
+					type="text"
+					id="expiry_date"
+					name="expiry_date"
+					placeholder="MM/YY"
+					required
+				/><br /><br />
+
+				<label for="cvv">CVV:</label>
+				<input type="text" id="cvv" name="cvv" required /><br /><br />
+
+				<label for="name">Cardholder's Name:</label>
+				<input type="text" id="name" name="name" required /><br /><br />
+
+				<label for="amount">Amount:</label>
+				<input type="text" id="amount" name="amount" required /><br /><br />
+				<input
+					type="submit"
+					value="Pay Now 40.00 $"
+					onclick="showSuccessMessage()"
+				/>
+			</form>
+		</div>
+		<script>
+			function showSuccessMessage() {
+				alert("Purchase successful! Thank you for buying.");
+			}
+		</script>
+	</body>
+</html>
